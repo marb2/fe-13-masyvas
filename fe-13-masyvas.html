@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            fe-13-masyvas
+        </title> 
+        <style>
+            td {
+                border:2px solid red;
+            }
+            table {
+                border:2px solid black;
+            }
+        </style>   
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td>Numeris</td>
+                    <td>Kelias(m)</td>
+                    <td>Laikas(s)</td>
+                    <td>Greitis(km/h)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="data"></td>
+                    <td id="numeris"></td>
+                    <td id="kelias"></td>
+                    <td id="laikas"></td>
+                    <td id="greitis"></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var duomenys = ['2017-07-06 19:59:45','LRS123',5000,118];
+            var v = Math.round((duomenys[2]/1000)/(duomenys[3]/3600)); //suapvalintas greitis
+            duomenys.push(v);
+            console.log(duomenys);
+            document.getElementById("data").innerHTML =(duomenys[0]); 
+            document.getElementById("numeris").innerHTML =(duomenys[1]);
+            document.getElementById("kelias").innerHTML =(duomenys[2]);
+            document.getElementById("laikas").innerHTML =(duomenys[3]);
+            document.getElementById("greitis").innerHTML =(duomenys[4]);
+            console.log('greitis yra '+v+' km/h' );
+        </script>
+    </body>
+</html>
